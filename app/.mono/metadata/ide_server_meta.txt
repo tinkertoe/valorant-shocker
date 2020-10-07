@@ -1,0 +1,2 @@
+﻿6155
+C:\Program Files (x86)\Godot\Godot Mono.exe

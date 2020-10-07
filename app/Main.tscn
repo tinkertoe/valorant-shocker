@@ -1,0 +1,336 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/themes/normal.tres" type="Theme" id=1]
+[ext_resource path="res://assets/themes/health.tres" type="Theme" id=2]
+[ext_resource path="res://assets/icons/flash-off.svg" type="Texture" id=3]
+[ext_resource path="res://assets/icons/flash-on.svg" type="Texture" id=4]
+[ext_resource path="res://assets/icons/flash-hover.svg" type="Texture" id=5]
+[ext_resource path="res://src/Settings.cs" type="Script" id=6]
+[ext_resource path="res://assets/themes/label.tres" type="Theme" id=7]
+[ext_resource path="res://src/Main.cs" type="Script" id=8]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -3.26548, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1000.0
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 5.0
+scale_curve = SubResource( 2 )
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VerticalContainer" type="VBoxContainer" parent="Main"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonMContainer" type="MarginContainer" parent="Main/VerticalContainer"]
+margin_right = 450.0
+margin_bottom = 527.0
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+
+[node name="ToggleButton" type="TextureButton" parent="Main/VerticalContainer/ButtonMContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 400.0
+margin_bottom = 477.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="Particles" type="Particles2D" parent="Main/VerticalContainer/ButtonMContainer/ToggleButton"]
+show_behind_parent = true
+position = Vector2( 176, 215 )
+emitting = false
+amount = 5000
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource( 3 )
+
+[node name="InfoCContainer" type="CenterContainer" parent="Main/VerticalContainer"]
+margin_top = 531.0
+margin_right = 450.0
+margin_bottom = 650.0
+
+[node name="InfroMContainer" type="MarginContainer" parent="Main/VerticalContainer/InfoCContainer"]
+margin_left = 170.0
+margin_right = 280.0
+margin_bottom = 119.0
+custom_constants/margin_bottom = 8
+
+[node name="InfoVContainer" type="VBoxContainer" parent="Main/VerticalContainer/InfoCContainer/InfroMContainer"]
+margin_right = 110.0
+margin_bottom = 111.0
+alignment = 1
+
+[node name="LabelCContainer" type="CenterContainer" parent="Main/VerticalContainer/InfoCContainer/InfroMContainer/InfoVContainer"]
+margin_right = 110.0
+margin_bottom = 16.0
+theme = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="Main/VerticalContainer/InfoCContainer/InfroMContainer/InfoVContainer/LabelCContainer"]
+margin_right = 110.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "health"
+
+[node name="HealthCContainer" type="CenterContainer" parent="Main/VerticalContainer/InfoCContainer/InfroMContainer/InfoVContainer"]
+margin_top = 20.0
+margin_right = 110.0
+margin_bottom = 111.0
+
+[node name="Health" type="Label" parent="Main/VerticalContainer/InfoCContainer/InfroMContainer/InfoVContainer/HealthCContainer"]
+margin_left = 30.0
+margin_right = 80.0
+margin_bottom = 91.0
+theme = ExtResource( 2 )
+text = "?"
+align = 1
+
+[node name="Timer" type="Timer" parent="Main"]
+wait_time = 0.5
+autostart = true
+
+[node name="Settings" type="WindowDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -197.5
+margin_top = -210.0
+margin_right = 197.5
+margin_bottom = 210.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+window_title = "Settings"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HorizontalContainer" type="VBoxContainer" parent="Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsMargin" type="MarginContainer" parent="Settings/HorizontalContainer"]
+margin_right = 395.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 5
+
+[node name="SettingsContainer" type="VBoxContainer" parent="Settings/HorizontalContainer/SettingsMargin"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 385.0
+margin_bottom = 174.0
+
+[node name="SettingsHContainer" type="HBoxContainer" parent="Settings/HorizontalContainer/SettingsMargin/SettingsContainer"]
+margin_right = 375.0
+margin_bottom = 164.0
+
+[node name="SettingsVContainer1" type="VBoxContainer" parent="Settings/HorizontalContainer/SettingsMargin/SettingsContainer/SettingsHContainer"]
+margin_right = 185.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="SpinBox" parent="Settings/HorizontalContainer/SettingsMargin/SettingsContainer/SettingsHContainer/SettingsVContainer1"]
+margin_right = 185.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 10000.0
+prefix = "x ="
+suffix = "px"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="y" type="SpinBox" parent="Settings/HorizontalContainer/SettingsMargin/SettingsContainer/SettingsHContainer/SettingsVContainer1"]
+margin_top = 42.0
+margin_right = 185.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 10000.0
+prefix = "y ="
+suffix = "px"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="w" type="SpinBox" parent="Settings/HorizontalContainer/SettingsMargin/SettingsContainer/SettingsHContainer/SettingsVContainer1"]
+margin_top = 84.0
+margin_right = 185.0
+margin_bottom = 122.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 1.0
+max_value = 10000.0
+value = 1.0
+prefix = "w ="
+suffix = "px"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="h" type="SpinBox" parent="Settings/HorizontalContainer/SettingsMargin/SettingsContainer/SettingsHContainer/SettingsVContainer1"]
+margin_top = 126.0
+margin_right = 185.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 1.0
+max_value = 10000.0
+value = 1.0
+prefix = "h ="
+suffix = "px"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsVContainer2" type="VBoxContainer" parent="Settings/HorizontalContainer/SettingsMargin/SettingsContainer/SettingsHContainer"]
+margin_left = 189.0
+margin_right = 375.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="confidence" type="SpinBox" parent="Settings/HorizontalContainer/SettingsMargin/SettingsContainer/SettingsHContainer/SettingsVContainer2"]
+margin_right = 186.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+prefix = "c ="
+suffix = "%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="damage" type="SpinBox" parent="Settings/HorizontalContainer/SettingsMargin/SettingsContainer/SettingsHContainer/SettingsVContainer2"]
+margin_top = 42.0
+margin_right = 186.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 1.0
+max_value = 10000.0
+value = 1.0
+prefix = "d ="
+suffix = "hp"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="SpinBox" parent="Settings/HorizontalContainer/SettingsMargin/SettingsContainer/SettingsHContainer/SettingsVContainer2"]
+margin_top = 84.0
+margin_right = 186.0
+margin_bottom = 122.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 10.0
+value = 10.0
+prefix = "t ="
+suffix = "ms"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="port" type="LineEdit" parent="Settings/HorizontalContainer/SettingsMargin/SettingsContainer/SettingsHContainer/SettingsVContainer2"]
+margin_top = 126.0
+margin_right = 186.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Port (COM1)"
+
+[node name="PreviewMargin" type="MarginContainer" parent="Settings/HorizontalContainer"]
+margin_top = 183.0
+margin_right = 395.0
+margin_bottom = 362.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="PreviewImage" type="TextureRect" parent="Settings/HorizontalContainer/PreviewMargin"]
+margin_left = 10.0
+margin_right = 385.0
+margin_bottom = 169.0
+expand = true
+stretch_mode = 6
+
+[node name="ButtonMargin" type="MarginContainer" parent="Settings/HorizontalContainer"]
+margin_top = 366.0
+margin_right = 395.0
+margin_bottom = 419.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 5
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Save" type="Button" parent="Settings/HorizontalContainer/ButtonMargin"]
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 385.0
+margin_bottom = 43.0
+text = "Save"
+
+[node name="Timer" type="Timer" parent="Settings"]
+wait_time = 2.0
+autostart = true
+[connection signal="timeout" from="Main/Timer" to="Main" method="_ReadHealth"]
+[connection signal="pressed" from="Settings/HorizontalContainer/ButtonMargin/Save" to="Settings" method="WriteSettings"]
+[connection signal="timeout" from="Settings/Timer" to="Settings" method="SetPreviewImage"]
