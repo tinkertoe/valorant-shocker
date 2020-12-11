@@ -25,7 +25,7 @@ void loop()
         {
             Serial.println("shocking...");
             digitalWrite(shock_pin, HIGH);
-            delay((r + 1) * 10);
+            delay((r + 1) * 20);
             digitalWrite(shock_pin, LOW);
         }
     }
