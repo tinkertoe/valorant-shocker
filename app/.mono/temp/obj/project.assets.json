@@ -1,40 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.7": {
-      "Newtonsoft.Json/12.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.7/win": {
-      "Newtonsoft.Json/12.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.7/win-x64": {
-      "Newtonsoft.Json/12.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      }
-    },
-    ".NETFramework,Version=v4.7/win-x86": {
+    ".NETFramework,Version=v4.7.2": {
       "Newtonsoft.Json/12.0.3": {
         "type": "package",
         "compile": {
@@ -80,59 +47,51 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.7": [
+    ".NETFramework,Version=v4.7.2": [
       "Newtonsoft.Json >= 12.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\henry\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Software Projects\\Godot\\Projects\\valorant-shocker\\ValorantShocker.csproj",
+      "projectUniqueName": "C:\\Users\\henry\\valorant-shocker\\app\\ValorantShocker.csproj",
       "projectName": "ValorantShocker",
-      "projectPath": "E:\\Software Projects\\Godot\\Projects\\valorant-shocker\\ValorantShocker.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\Software Projects\\Godot\\Projects\\valorant-shocker\\.mono\\temp\\obj\\",
+      "projectPath": "C:\\Users\\henry\\valorant-shocker\\app\\ValorantShocker.csproj",
+      "packagesPath": "C:\\Users\\henry\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\henry\\valorant-shocker\\app\\.mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
-      "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\henry\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net47"
+        "net472"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net47": {
+        "net472": {
           "projectReferences": {}
         }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
       }
     },
     "frameworks": {
-      "net47": {
+      "net472": {
         "dependencies": {
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.3, )"
           }
-        }
-      }
-    },
-    "runtimes": {
-      "win": {
-        "#import": []
-      },
-      "win-x64": {
-        "#import": []
-      },
-      "win-x86": {
-        "#import": []
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

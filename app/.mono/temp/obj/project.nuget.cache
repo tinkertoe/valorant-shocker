@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KhD5gCH41/OlfZXVNON7/kVBpt5pCJfrnzjPMPsr64t5AIMq1+VSWAXY1pco6N6gXumRyjxcJzkd2UM38e2e5A==",
+  "dgSpecHash": "vT6v1MHsJceQ5AppZtO7hS3hF8VJz63dn7SSXQLTYoaqD6Im00oY65tgG9CeuF2VHb3YOg21THsEp2b/tIM3AA==",
   "success": true,
-  "projectFilePath": "E:\\Software Projects\\Godot\\Projects\\valorant-shocker\\ValorantShocker.csproj",
+  "projectFilePath": "C:\\Users\\henry\\valorant-shocker\\app\\ValorantShocker.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\henry\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }

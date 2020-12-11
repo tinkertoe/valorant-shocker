@@ -1,0 +1,8 @@
+C:\Users\henry\valorant-shocker\app\.mono\temp\bin\Debug\ValorantShocker.dll
+C:\Users\henry\valorant-shocker\app\.mono\temp\bin\Debug\ValorantShocker.pdb
+C:\Users\henry\valorant-shocker\app\.mono\temp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\henry\valorant-shocker\app\.mono\temp\obj\Debug\ValorantShocker.csprojAssemblyReference.cache
+C:\Users\henry\valorant-shocker\app\.mono\temp\obj\Debug\ValorantShocker.csproj.CoreCompileInputs.cache
+C:\Users\henry\valorant-shocker\app\.mono\temp\obj\Debug\ValorantShocker.csproj.CopyComplete
+C:\Users\henry\valorant-shocker\app\.mono\temp\obj\Debug\ValorantShocker.dll
+C:\Users\henry\valorant-shocker\app\.mono\temp\obj\Debug\ValorantShocker.pdb
